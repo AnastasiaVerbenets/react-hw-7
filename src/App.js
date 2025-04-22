@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import { TaskList } from './components/TaskList/TaskList';
 import todos from "./todos.json"
+import { Dropdown } from './components/Dropdown/Dropdown';
 
 class App extends Component {
     state = { todos };
@@ -15,7 +16,12 @@ class App extends Component {
     render() {
         const { todos } = this.state;
 
-        return (<TaskList onDeleteTodo={this.deleteTodo} todos={todos} />);
+        return (
+            <>
+                <TaskList onDeleteTodo={this.deleteTodo} todos={todos} />
+                <Dropdown />
+            </>
+        );
     }
 }
 
